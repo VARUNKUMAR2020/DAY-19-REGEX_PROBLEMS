@@ -25,23 +25,39 @@ public class Regex {
 		}
 		return mail;
 	}
+	
+	public static String Mobile(String mobile) {
+		Pattern cell = Pattern.compile("^[0-9]{1,2}[6-9]{1}[0-9]{9}$");
+		Matcher check = cell.matcher(mobile);
+		if (check.find()) {
+			System.out.println("THANK YOU FOR ENTERING VALID MOBILE NUMBER ");
+		} else {
+			System.err.println("YOU HAVE ENTERED INVALID MOBILE NUMBER");
+		}
+		return mobile;
+	}
+
 
 	public static void main(String[] args) {
 		System.out.println("WELCOME REGEX BASED PROBLEMS");
-		Regex CheckName = new Regex();
+		Regex Check = new Regex();
 		System.out.println("USER REGISTRATION");
 		Scanner firstName = new Scanner(System.in);
 		System.out.println("ENTER THE FIRST NAME: ");
 		String Name = firstName.nextLine();
-		CheckName.Name(Name);
+		Check.Name(Name);
 		Scanner lastName = new Scanner(System.in);
 		System.out.println("ENTER THE LAST NAME: ");
 		String lname = lastName.nextLine();
-		CheckName.Name(lname);
+		Check.Name(lname);
 		Scanner mail = new Scanner(System.in);
 		System.out.println("ENTER THE MAIL ID: ");
 		String email = mail.nextLine();
-		CheckName.Email(email);
+		Check.Email(email);
+		Scanner cell= new Scanner(System.in);
+		System.out.println("ENTER THE MOBILE NUMBER: ");
+		String mobile = cell.nextLine();
+		Check.Mobile(mobile);
 
 	}
 }
