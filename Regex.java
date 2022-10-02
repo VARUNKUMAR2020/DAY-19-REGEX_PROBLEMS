@@ -37,12 +37,12 @@ public class Regex {
 		return mobile;
 	}
 	public static String Password(String password) {
-		Pattern security= Pattern.compile("^(?[A-Z]?[0-9][.]){1,8})$");
+		Pattern security= Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,})$");
 		Matcher check = security.matcher(password);
 		if (check.find()) {
 			System.out.println("THANK YOU FOR ENTERING PASSWORD ");
 		} else {
-			System.err.println("YOU HAVE ENTER 8 CHARACTER");
+			System.err.println("YOUR PASSWORD IS WEAK DOES NOT MATCHES TO THE CONDITION");
 		}
 		return password;
 	}
