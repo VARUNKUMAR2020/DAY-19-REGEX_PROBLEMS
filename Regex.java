@@ -6,15 +6,15 @@ import java.util.regex.*;
 
 public class Regex 
 {
-	public static String FirstName(String fName) {
+	public static String Name(String Name) {
 		Pattern name = Pattern.compile("^[A-Z][a-z]{2,}$");
-		Matcher checkName = name.matcher(fName);
+		Matcher checkName = name.matcher(Name);
 		if (checkName.find()) {
 			System.out.println("THANK YOU FOR ENTERING VALID FIRST NAME "); 
 		} else {
 			System.err.println("YOU HAVE ENTERED INVALID FIRST NAME ");
 		}
-		return fName;
+		return Name;
 	}
     public static void main( String[] args )
     {
@@ -24,7 +24,11 @@ public class Regex
 		Scanner firstName = new Scanner(System.in);
 		System.out.println("ENTER THE FIRST NAME: ");
 		String Name = firstName.nextLine();
-		CheckName.FirstName(Name);
+		CheckName.Name(Name);
+		Scanner lastName = new Scanner(System.in);
+		System.out.println("ENTER THE LAST NAME: ");
+		String lname = lastName.nextLine();
+        CheckName.Name(lname);
       
         	
 	}
