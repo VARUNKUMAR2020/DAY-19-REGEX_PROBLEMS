@@ -36,6 +36,17 @@ public class Regex {
 		}
 		return mobile;
 	}
+	public static String Password(String password) {
+		Pattern security= Pattern.compile("^[.]{1,8}$");
+		Matcher check = security.matcher(password);
+		if (check.find()) {
+			System.out.println("THANK YOU FOR ENTERING PASSWORD ");
+		} else {
+			System.err.println("YOU HAVE ENTER 8 CHARACTER");
+		}
+		return password;
+	}
+
 
 
 	public static void main(String[] args) {
@@ -58,6 +69,10 @@ public class Regex {
 		System.out.println("ENTER THE MOBILE NUMBER: ");
 		String mobile = cell.nextLine();
 		Check.Mobile(mobile);
+		Scanner security= new Scanner(System.in);
+		System.out.println("ENTER THE PASSWORD: ");
+		String password = security.nextLine();
+		Check.Password(password);
 
 	}
 }
