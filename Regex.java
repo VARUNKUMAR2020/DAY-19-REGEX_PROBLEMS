@@ -37,7 +37,7 @@ public class Regex {
 		return mobile;
 	}
 	public static String Password(String password) {
-		Pattern security= Pattern.compile("^(?[A-Z][.]{1,8})$");
+		Pattern security= Pattern.compile("^(?[A-Z]?[0-9][.]){1,8})$");
 		Matcher check = security.matcher(password);
 		if (check.find()) {
 			System.out.println("THANK YOU FOR ENTERING PASSWORD ");
